@@ -1,0 +1,9 @@
+name: GayMC_Plugin
+version: '1.0-SNAPSHOT'
+main: org.Little_100.GayMC_Plugin.GayMC_Plugin
+description: 亻尔女子,插件的作者是男娘
+api-version: '1.21'
+authors: [ Little_100 ]
+commands:
+  fuck:
+    description: fuck
