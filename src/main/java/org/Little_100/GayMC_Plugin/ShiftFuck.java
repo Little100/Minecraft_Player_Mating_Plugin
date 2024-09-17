@@ -49,79 +49,36 @@ public class ShiftFuck implements Listener {
                     break;
                 }
             }
+            Set<Material> bedMaterials = new HashSet<>();
+            bedMaterials.add(Material.WHITE_BED);
+            bedMaterials.add(Material.ORANGE_BED);
+            bedMaterials.add(Material.MAGENTA_BED);
+            bedMaterials.add(Material.LIGHT_BLUE_BED);
+            bedMaterials.add(Material.YELLOW_BED);
+            bedMaterials.add(Material.LIME_BED);
+            bedMaterials.add(Material.PINK_BED);
+            bedMaterials.add(Material.GRAY_BED);
+            bedMaterials.add(Material.LIGHT_GRAY_BED);
+            bedMaterials.add(Material.CYAN_BED);
+            bedMaterials.add(Material.PURPLE_BED);
+            bedMaterials.add(Material.BLUE_BED);
+            bedMaterials.add(Material.BROWN_BED);
+            bedMaterials.add(Material.GREEN_BED);
+            bedMaterials.add(Material.RED_BED);
+            bedMaterials.add(Material.BLACK_BED);
             for (int x = -RADIUS; x <= RADIUS; x++) {
-                    for (int y = -RADIUS; y <= RADIUS; y++) {
-                        for (int z = -RADIUS; z <= RADIUS; z++) {
-                            Block block = location.getWorld().getBlockAt(location.getBlockX() + x, location.getBlockY() + y, location.getBlockZ() + z);
-                            if (block.getType() == Material.BLACK_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.RED_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.BLUE_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.YELLOW_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.WHITE_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.ORANGE_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.MAGENTA_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.LIGHT_BLUE_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.PURPLE_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.PINK_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.LIME_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.GRAY_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.LIGHT_GRAY_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.CYAN_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.BLUE_BED) {
-                                hasBed = true;
-                                break;
-                            }
-                            if (block.getType() == Material.YELLOW_BED) {
-                                hasBed = true;
-                                break;
-                            }
+                for (int y = -RADIUS; y <= RADIUS; y++) {
+                    for (int z = -RADIUS; z <= RADIUS; z++) {
+                        Block block = location.getWorld().getBlockAt(location.getBlockX() + x, location.getBlockY() + y, location.getBlockZ() + z);
+                        if (bedMaterials.contains(block.getType())) {
+                            hasBed = true;
+                            break;
                         }
-                        if (hasBed) break;
                     }
                     if (hasBed) break;
                 }
+                if (hasBed) break;
+            }
             if (hasOtherPlayer && hasBed) {
                 // 玩家潜行时，如果附近有其他玩家和床，则给玩家恢复生命
                 giveRegenerationEffect(player);
