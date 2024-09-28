@@ -16,6 +16,8 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitScheduler;
 import org.bukkit.scheduler.BukkitTask;
+import org.Little_100.GayMC_Plugin.ChanceHaveBaby;
+
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -25,12 +27,12 @@ import java.util.Set;
 public class ShiftFuck implements Listener {
     private static final int RADIUS = 3; //3x3x3的范围
     private final Plugin plugin;
-
+    private final ChanceHaveBaby chanceHaveBaby;
+    private int sneaktimes = 0;    //定义搜索范围为3格
     public ShiftFuck(Plugin plugin) {
         this.plugin = plugin;
+        this.chanceHaveBaby = new ChanceHaveBaby(plugin.getConfig());
     }
-    private int sneaktimes = 0;
-    //定义搜索范围为3格
     @EventHandler
     public void onPlayerToggleSneak(PlayerToggleSneakEvent event) {
         Player player = event.getPlayer();
@@ -94,7 +96,10 @@ public class ShiftFuck implements Listener {
                     spawnElectricParticleBelowChest(player);
                     spawnMilkBukkitRunnable(player);
                     sneaktimes = 0;
+                    //引用ChanceHaveBaby类 实现玩家怀孕的效果
+                    chanceHaveBaby.checkForBaby(player);
                 }
+                sneaktimes = 0;
             }
         }
     }
