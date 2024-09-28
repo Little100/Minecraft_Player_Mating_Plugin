@@ -7,3 +7,12 @@ authors: [ Little_100 ]
 commands:
   fuck:
     description: fuck
+  GayMC_Plugin:
+    description: reload/version/help
+    permission: GayMC_Plugin.admin
+    usage: /GayMC_Plugin reload
+    permission-message: '§cYou don''t have permission!'
+permissions:
+  GayMC_Plugin.admin:
+    description: 重新加载插件/查看插件版本/查看插件帮助
+    default: op
