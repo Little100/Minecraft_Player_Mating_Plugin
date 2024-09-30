@@ -1,6 +1,7 @@
-# Minecraft Fuck Plugin
+# Minecraft Mating Plugin
 
 - 这是我人生中写的第一个我的世界的插件
+- release中之所以是GayMC_Plugin而不是Minecraft Mating Plugin是因为纪念我之前的服务器名称
 
 
 ## 食用
