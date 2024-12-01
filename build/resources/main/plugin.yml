@@ -1,0 +1,24 @@
+name: GayMC_Plugin
+version: '2.0'
+main: org.Little_100.GayMC_Plugin.GayMC_Plugin
+description: 亻尔女子,插件的作者是男娘
+api-version: '1.21'
+authors: [ Little_100 ]
+commands:
+  gshop:
+    description: 购买道具
+  gshopgui:
+    description: 购买道具GUI 但是暂不支持
+  ghelp:
+    description: 查看帮助
+  fuck:
+    description: fuck
+  GayMC_Plugin:
+    description: reload/version/help
+    permission: GayMC_Plugin.admin
+    usage: /GayMC_Plugin reload
+    permission-message: '§cYou don''t have permission!'
+permissions:
+  GayMC_Plugin.admin:
+    description: 重新加载插件/查看插件版本/查看插件帮助
+    default: op

@@ -1,0 +1,86 @@
+Pregnant:
+  enable: true #是否开启怀孕效果 默认true True开启  False关闭 如果输入非true/false 则会自动设置为true
+  chance: 0.5 #此选项代表每次玩家执行完效果 即生成牛奶桶后有多少概率会让玩家怀孕 默认0.5 也就是50% 如果数值超过1或者为负数则会自动设置为0.5
+  # 如果以下两项都为false 则会恢复默认值(0.5/0.5)
+  # 两数之和必须=1 如果不为一则会自动设置为0.5/0.5
+  Gril:
+    enable: true #是否开启怀孕为女孩的结果 默认true 如果输入非true/false 则会自动设置为true
+    chance: 0.5 #代表怀女孩的概率 默认0.5 也就是50%
+  Boy:
+    enable: true #是否开启怀孕为男孩的结果 默认true
+    chance: 0.5 #代表怀男孩的概率 默认0.5 也就是50%
+  Multiple_Birth:
+    enable: true #是否开启多胎效果 默认true 如果输入非true/false 则会自动设置为true
+    chance: 0.5 #代表多胎的概率 默认0.5 也就是50% 如果数值超过1或者为负数则会自动设置为0.5
+    Max_Babies: 3 #代表最大多胞胎数量 默认3 如果数值小于1或者为负数则会自动设置为3
+  Pregnant_Effect: #怀孕效果 此选项在Pregnant中启用时必须开启 所以没有enable选项
+    Time: 30 #此选项代表怀孕持续时间 默认30天游戏日 仅处理玩家在线的时间 也就是现实时间12小时
+    #并且如果值小于等于0则会自动设置为30游戏日
+    Wait_time: 10 #此选项代表怀孕后等待时间 默认10游戏日 仅处理玩家在线的时间 也就是现实时间4个小时
+    #并且如果值小于等于0则会自动设置为10游戏日
+    Get_Slowness:
+      enable: true #是否开启减速效果 默认true 如果输入非true/false 则会自动设置为true
+      Level_1:
+        Effective_date: 0.1 #此选项代表减速效果生效日期 默认0.1 也就是10% 也就是30*10% = 3天后生效 如果数值超过1或者为负数则会自动设置为0.1
+      Level_2:
+        Effective_date: 0.2 #此选项代表减速效果生效日期 默认0.2 也就是20% 也就是30*20% = 6天后生效 如果数值超过1或者为负数则会自动设置为0.2
+    Get_Weakness:
+      enable: true #是否开启虚弱效果 默认true 如果输入非true/false 则会自动设置为true
+      Level_1:
+        Effective_date: 0.4 #此选项代表虚弱效果生效日期 默认0.4 也就是40% 也就是30*40% = 12天后生效 如果数值超过1或者为负数则会自动设置为0.4
+      Level_2:
+        Effective_date: 0.8 #此选项代表虚弱效果生效日期 默认0.8 也就是80% 也就是30*80% = 24天后生效 如果数值超过1或者为负数则会自动设置为0.8
+    Jump_Injured:
+      enable: true #是否开启跳伤效果 默认true 如果输入非true/false 则会自动设置为true
+      Level_1:
+        Effective_date: 0.7 #此选项代表跳伤效果生效日期 默认0.7 也就是70% 也就是30*70% = 21天后生效 如果数值超过1或者为负数则会自动设置为0.7
+        Injured: 2 #此选项代表跳伤效果造成的伤害 默认2 也就是一颗心 如果数值小于1或者为负数则会自动设置为2 非整数恢复默认
+  Childbirth:
+    Random_Childbirth_Time:
+      enable: true #是否开启随机分娩时间 默认true 如果输入非true/false 则会自动设置为true
+      min_time: 27 #此选项代表最小分娩时间 默认27 也就是10天 单位为游戏日 如果数值小于1或者为负数则会自动设置为27 非整数恢复默认
+      max_time: 30 #此选项代表最大分娩时间 默认30 也就是30天 单位为游戏日 如果数值小于1或者为负数则会自动设置为30 非整数恢复默认
+    Dystocia: #难产 如果不行难产 自己会死亡也不会正常拥有宝宝
+      enable: true #是否开启难产效果 默认true 如果输入非true/false 则会自动设置为true
+      chance: 0.05 #此选项代表难产的概率 默认0.05 也就是5% 低于0或者大于1则会自动设置为0.05
+Shift_Times:
+  enable: true #开启shift次数惩罚
+  times: 3 #执行最终结果的次数
+  warning_times: 2 #警告 默认第二次最终执行结果后提示玩家不要继续
+  time: 50 #在规定时间内 单位秒
+  bad_effect: #惩罚效果
+    enable: true #是否开启惩罚效果 默认true 如果输入非true/false 则会自动设置为true
+    punish: #惩罚
+      enable: true #是否开启惩罚 默认true 如果输入非true/false 则会自动设置为true
+      die:
+        enable: true #是否开启死亡惩罚 默认true 如果输入非true/false 则会自动设置为true
+        probability: 0.1 #此选项代表死亡惩罚的概率 默认0.1 也就是10% 低于0或者大于1则会自动设置为0.1
+      weakness:
+        enable: true #是否开启虚弱惩罚 默认true 如果输入非true/false 则会自动设置为true
+        Level: 8 #此选项代表虚弱等级 默认8 也就是8级 如果数值小于1或者为负数则会自动设置为8 非整数恢复默认
+        time: 30 #持续时间 默认30秒 单位秒 如果数值小于1或者为负数则会自动设置为30 非整数恢复默认
+Shop:
+  BYT:
+    Name: "杜蕾斯" #byt的名字
+    Description: "杜蕾斯是一款高端的byt 使用后怀孕概率减少" #byt的描述
+    Probability: 0.2 #byt的概率 默认0.2 低于0或者大于1则会自动设置为0.2
+    Price:
+      Diamond: 1 #byt的价格 默认1钻石 低于0则会自动设置为1 必须是整数
+      Gold: 1 #byt的价格 默认1金 低于0则会自动设置为1 必须是整数
+      Iron: 1 #byt的价格 默认1铁 低于0则会自动设置为1 必须是整数
+  SB:
+    Name: "肾宝" #sb的名字
+    Description: "肾宝是一款高端的补肾用品 使用后怀孕概率增加并且没有处罚" #sb的描述
+    Probability: 0.1 #怀孕的概率增加 默认0.1 低于0或者大于1则会自动设置为0.1
+    Price:
+      Diamond: 1 #sb的价格 默认1钻石 低于0则会自动设置为1 必须是整数
+      Gold: 1 #sb的价格 默认1金 低于0则会自动设置为1 必须是整数
+      Iron: 1 #sb的价格 默认1铁 低于0则会自动设置为1 必须是整数
+    Remove_Shift_Punish:
+      enable: true #是否移除shift惩罚 默认true 如果输入非true/false 则会自动设置为true
+      remove_time: 300 #在多久之内不会被惩罚 默认300秒 单位秒 如果数值小于1或者为负数则会自动设置为300 非整数恢复默认
+    Effect:
+      enable: true #是否开启效果 默认true 如果输入非true/false 则会自动设置为true
+      Haste:
+        enable: true #是否开启加速效果 默认true 如果输入非true/false 则会自动设置为true
+        Level: 5 #此选项代表加速等级 默认5 也就是5级 如果数值小于1或者为负数则会自动设置为5 非整数恢复默认
